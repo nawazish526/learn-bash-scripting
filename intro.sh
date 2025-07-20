@@ -115,3 +115,99 @@ comment
 
 ## What is a Variable in Bash?
 -> A variable is a way to store data (like numbers, strings, or paths) that can be used and reused throughout the script or terminal session.
+
+# This is variable
+
+EXAMPLE
+#!/bin/bash
+
+#--------variable--------------
+
+name="Nawazish"
+age=22
+
+echo "hey $name here & I'm $age year old"
+
+
+##Updating Variables
+
+-> You can change the value of a variable by assigning it again:
+
+
+EXAMPLE
+#!/bin/bash
+x=10
+echo "print value of x $x"
+
+x=4
+echo "print value of updated x $x"
+---
+
+🔹 3. Storing Command Output in a Variable
+
+-> Use command substitution like $(command) to store output:
+
+HOSTNAME=$(hostname)
+echo "Your system hostname is: $HOSTNAME"
+
+EXAMPLE
+#!/bin/bash
+
+user=$(whoami)
+dir=$(ls)
+
+echo "current is $user"
+echo "show my directory $dir"
+
+
+
+---
+
+🔹 4. Constant Variables (Read-Only)
+
+To create a variable that cannot be changed:
+
+readonly author="Nawaz"
+echo "Written by: $author"
+
+# Trying to change it will give an error:
+# author="Someone Else"  ← ❌ Not allowed
+
+
+---
+
+🔹 5. Arrays in Bash
+
+➤ What is an Array?
+
+An array stores multiple values in a single variable.
+
+➤ Declare an Array:
+
+myArray=(1 20 30.5 Hello "Hey Buddy")
+
+➤ Access Array Elements:
+
+echo "${myArray[2]}"
+# Output: 30.5 (3rd element, index starts from 0)
+
+
+---
+
+🛠️ 6. Useful Array Operations
+
+✔ Print All Elements:
+
+echo "${myArray[@]}"
+# Output: 1 20 30.5 Hello Hey Buddy
+
+✔ Get Length of Array:
+
+echo "${#myArray[@]}"
+# Output: 5
+
+✔ Access a Range of Elements:
+
+echo "${myArray[@]:2:2}"
+
+# Output: 30.5 Hello
